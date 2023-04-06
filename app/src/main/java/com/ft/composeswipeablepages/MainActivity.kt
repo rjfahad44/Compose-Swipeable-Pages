@@ -93,6 +93,7 @@ class MainActivity : ComponentActivity() {
                         ) {
                             Icon(
                                 imageVector = Icons.Default.KeyboardArrowRight,
+                                tint = Color.White,
                                 contentDescription = "Go forward"
                             )
                         }
