@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PageSize
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -64,14 +65,15 @@ class MainActivity : ComponentActivity() {
                     ) {
                         IconButton(
                             onClick = {
+                                val _pageState = if(pagerState.currentPage == 0) animals.size else pagerState.currentPage - 1
                                 scope.launch {
-                                    val _pageState = if(pagerState.currentPage == 0) animals.size else pagerState.currentPage - 1
                                     pagerState.animateScrollToPage(
                                         _pageState
                                     )
                                 }
                             },
-                            modifier = Modifier.align(Alignment.CenterStart)
+                            modifier = Modifier
+                                .align(Alignment.CenterStart)
 
                         ) {
                             Icon(
@@ -82,8 +84,8 @@ class MainActivity : ComponentActivity() {
                         }
                         IconButton(
                             onClick = {
+                                val _pageState = if(pagerState.currentPage == animals.size-1) 0 else pagerState.currentPage + 1
                                 scope.launch {
-                                    val _pageState = if(pagerState.currentPage == animals.size-1) 0 else pagerState.currentPage + 1
                                     pagerState.animateScrollToPage(
                                         _pageState
                                     )
