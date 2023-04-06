@@ -64,7 +64,7 @@ class MainActivity : ComponentActivity() {
                         IconButton(
                             onClick = {
                                 scope.launch {
-                                    val _pageState = if(pagerState.currentPage == animals.size-1) 0 else pagerState.currentPage - 1
+                                    val _pageState = if(pagerState.currentPage == 0) animals.size else pagerState.currentPage - 1
                                     pagerState.animateScrollToPage(
                                         _pageState
                                     )
