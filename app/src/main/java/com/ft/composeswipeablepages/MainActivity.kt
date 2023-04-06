@@ -19,6 +19,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -57,7 +58,7 @@ class MainActivity : ComponentActivity() {
                             .offset(y = -(16).dp)
                             .fillMaxWidth(0.5f)
                             .clip(RoundedCornerShape(100))
-                            .background(MaterialTheme.colors.background)
+                            .background(Color.DarkGray)
                             .padding(8.dp)
                             .align(Alignment.BottomCenter)
                     ) {
@@ -71,9 +72,11 @@ class MainActivity : ComponentActivity() {
                                 }
                             },
                             modifier = Modifier.align(Alignment.CenterStart)
+
                         ) {
                             Icon(
                                 imageVector = Icons.Default.KeyboardArrowLeft,
+                                tint = Color.White,
                                 contentDescription = "Go back"
                             )
                         }
